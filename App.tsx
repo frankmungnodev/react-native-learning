@@ -1,3 +1,7 @@
+if (__DEV__) {
+  import('./ReactotronConfig').then(() => console.log('Reactotron Configured'));
+}
+
 import React, {useEffect} from 'react';
 import {PaperProvider} from 'react-native-paper';
 
