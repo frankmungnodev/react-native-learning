@@ -10,6 +10,7 @@ import store from './src/app/store';
 import {determineThemeData} from './src/app/theme';
 import {CounterScreen} from './src/screens/counter/CounterScreen';
 import {HomeScreen} from './src/screens/home/HomeScreen';
+import MaterialCommunityIcons from 'react-native-vector-icons/MaterialCommunityIcons';
 
 const App: React.FC = () => {
   return (
@@ -50,7 +51,15 @@ const AppScreen: React.FC = () => {
             name="Home"
             component={HomeScreen}
             options={{
-              tabBarIcon: 'home-outline',
+              tabBarIcon({focused, color}) {
+                return (
+                  <MaterialCommunityIcons
+                    name={focused ? 'home' : 'home-outline'}
+                    color={color}
+                    size={25}
+                  />
+                );
+              },
               tabBarAccessibilityLabel: 'Home',
             }}
           />
@@ -58,7 +67,15 @@ const AppScreen: React.FC = () => {
             name="Counter"
             component={CounterScreen}
             options={{
-              tabBarIcon: 'ab-testing',
+              tabBarIcon({focused, color}) {
+                return (
+                  <MaterialCommunityIcons
+                    name={focused ? 'alarm-panel' : 'alarm-panel-outline'}
+                    color={color}
+                    size={25}
+                  />
+                );
+              },
               tabBarAccessibilityLabel: 'Counter',
             }}
           />
@@ -66,7 +83,15 @@ const AppScreen: React.FC = () => {
             name="Notifications"
             component={CounterScreen}
             options={{
-              tabBarIcon: 'bell-outline',
+              tabBarIcon({focused, color}) {
+                return (
+                  <MaterialCommunityIcons
+                    name={focused ? 'bell' : 'bell-outline'}
+                    color={color}
+                    size={25}
+                  />
+                );
+              },
               tabBarAccessibilityLabel: 'Notifications',
             }}
           />
@@ -74,7 +99,15 @@ const AppScreen: React.FC = () => {
             name="Profile"
             component={CounterScreen}
             options={{
-              tabBarIcon: 'account-outline',
+              tabBarIcon({focused, color}) {
+                return (
+                  <MaterialCommunityIcons
+                    name={focused ? 'account' : 'account-outline'}
+                    color={color}
+                    size={25}
+                  />
+                );
+              },
               tabBarAccessibilityLabel: 'Profile',
             }}
           />
