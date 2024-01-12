@@ -23,7 +23,7 @@ export const CombinedDarkTheme = {
 export type ThemeType = {
     value: 'system' | 'dark' | 'light',
     name: string,
-    data: Object
+    data: any
 };
 
 export const systemTheme: ThemeType = {

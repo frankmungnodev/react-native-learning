@@ -45,7 +45,7 @@ const AppScreen: React.FC = () => {
 
   return (
     <PaperProvider theme={themeToUse.data}>
-      <NavigationContainer>
+      <NavigationContainer theme={themeToUse.data}>
         <Tab.Navigator initialRouteName="Home">
           <Tab.Screen
             name="Home"
