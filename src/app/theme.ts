@@ -49,8 +49,6 @@ export const getThemeFromValue = (value: string | null): ThemeType => {
 export const determineThemeData = (theme: ThemeType): ThemeType => {
     const systemTheme = useColorScheme();
     const isDarkTheme = systemTheme == 'dark';
-    console.log(`determineThemeData => currentTheme: ${theme.value}, systemTheme: ${systemTheme}`);
-
     if (theme.value == 'system') {
         return {
             data: isDarkTheme ? CombinedDarkTheme : CombinedDefaultTheme,
